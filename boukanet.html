@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Bouka Net Retail Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
+            transition: all 0.3s ease-in-out;
+        }
+        .rtl-mode {
+            direction: rtl;
+            text-align: right;
+        }
+        .rtl-mode nav a {
+            direction: rtl; /* This is to fix a bug with some browsers */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white shadow-sm py-4 px-6 md:px-12 flex justify-between items-center">
+        <div class="text-xl font-bold text-slate-800">
+            Bouka Net Retail
+        </div>
+        <nav class="flex items-center space-x-4 md:space-x-8">
+            <div class="relative">
+                <select id="language-chooser" class="block w-full px-4 py-2 text-sm bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 transition-colors">
+                    <option value="en">English</option>
+                    <option value="ar">العربية</option>
+                </select>
+            </div>
+            <div class="flex space-x-4 md:space-x-8">
+                <a href="#solutions" id="nav-solutions" class="text-slate-600 hover:text-indigo-600 transition-colors">Solutions</a>
+                <a href="#how-it-works" id="nav-process" class="text-slate-600 hover:text-indigo-600 transition-colors">Process</a>
+                <a href="#contact" id="nav-contact" class="text-slate-600 hover:text-indigo-600 transition-colors">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 md:px-6 py-12">
+
+        <section class="text-center py-20 bg-white rounded-3xl shadow-lg">
+            <h1 id="hero-heading" class="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight mb-4 animate-fade-in-up">
+                Transform Your E-commerce Store with AR & AI
+            </h1>
+            <p id="hero-subtitle" class="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
+                Our solutions help you reduce returns, increase conversions, and create an unforgettable shopping experience.
+            </p>
+        </section>
+
+        <section id="solutions" class="py-16">
+            <h2 id="solutions-heading" class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900">
+                The Problem & Our Solution
+            </h2>
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div class="bg-white p-8 md:p-12 rounded-3xl shadow-lg">
+                    <h3 id="pain-points-heading" class="text-2xl font-semibold text-slate-800 mb-4">
+                        The Pain Points of Traditional E-commerce
+                    </h3>
+                    <ul class="space-y-4 text-slate-600">
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                            <span id="pain-point-1">High return rates due to mismatched products.</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span id="pain-point-2">Lost sales from customer uncertainty.</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-3-3v6m-4 5a2 2 0 11-4 0 2 2 0 014 0zm0 0a2 2 0 100-4 2 2 0 000 4z" />
+                            </svg>
+                            <span id="pain-point-3">A generic, unengaging shopping experience.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 md:p-12 rounded-3xl shadow-lg">
+                    <h3 id="advantage-heading" class="text-2xl font-semibold text-slate-800 mb-4">
+                        The Bouka Net Advantage
+                    </h3>
+                    <ul class="space-y-4 text-slate-600">
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span id="advantage-1"><b class="font-bold">AR-Powered Product Visualization:</b> Customers see products in their own space.</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m-2.122 13.414l.707.707M12 21v-1m-6.364-1.636l.707-.707M4 12H3m3.343-5.657L5.636 5.636M12 21v-1M4 12H3m3.343-5.657l-.707-.707M12 21v-1m-6.364-1.636l.707-.707M12 21v-1m-6.364-1.636l.707-.707" />
+                            </svg>
+                            <span id="advantage-2"><b class="font-bold">AI Personalization:</b> Smart recommendations for higher conversions.</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                            <span id="advantage-3"><b class="font-bold">Seamless Integration:</b> We work with your existing platform.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 text-center bg-white p-8 rounded-3xl shadow-lg">
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-12">
+                    <div class="text-center w-full md:w-1/2">
+                        <h4 id="before-heading" class="text-xl font-bold mb-2">Before: Static Product Page</h4>
+                        <img src="https://lh4.googleusercontent.com/HzPtoRRQJXxnQItAppeE0vIdhmUTx48kiCEOEbSNJkqZZu5IPQcQqXNU0sxe4kSCWMBvhMJGBdHpve4sLkgiuA" alt="A static image of a product" class="rounded-2xl shadow-lg w-full h-96 object-contain">
+                    </div>
+                    <div class="text-center w-full md:w-1/2">
+                        <h4 id="after-heading" class="text-xl font-bold mb-2">After: Interactive 3D Model</h4>
+                        <model-viewer id="ar-viewer"
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                            alt="A 3D model of a product"
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
+                            shadow-intensity="1"
+                            camera-controls
+                            auto-rotate
+                            class="w-full h-96 rounded-2xl shadow-lg">
+                        </model-viewer>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="py-16 bg-white rounded-3xl shadow-lg">
+            <h2 id="how-it-works-heading" class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900">
+                How It Works
+            </h2>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-12 px-8">
+                <div class="flex flex-col items-center text-center w-full md:w-1/3 p-6 bg-gray-50 rounded-2xl shadow-md">
+                    <div class="bg-indigo-600 text-white w-12 h-12 flex items-center justify-center rounded-full text-2xl font-bold mb-4">1</div>
+                    <h3 id="step-1-heading" class="text-xl font-semibold mb-2">Consultation</h3>
+                    <p id="step-1-text" class="text-slate-600">We meet to understand your business goals and current e-commerce setup. No-pressure, just a chat about your needs.</p>
+                </div>
+                <div class="flex flex-col items-center text-center w-full md:w-1/3 p-6 bg-gray-50 rounded-2xl shadow-md">
+                    <div class="bg-indigo-600 text-white w-12 h-12 flex items-center justify-center rounded-full text-2xl font-bold mb-4">2</div>
+                    <h3 id="step-2-heading" class="text-xl font-semibold mb-2">Development</h3>
+                    <p id="step-2-text" class="text-slate-600">Our team develops a custom AR/AI solution tailored to your product catalog and brand guidelines.</p>
+                </div>
+                <div class="flex flex-col items-center text-center w-full md:w-1/3 p-6 bg-gray-50 rounded-2xl shadow-md">
+                    <div class="bg-indigo-600 text-white w-12 h-12 flex items-center justify-center rounded-full text-2xl font-bold mb-4">3</div>
+                    <h3 id="step-3-heading" class="text-xl font-semibold mb-2">Launch & Support</h3>
+                    <p id="step-3-text" class="text-slate-600">We integrate the solution into your store and provide ongoing support to ensure success.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16">
+            <h2 id="contact-heading" class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900">
+                Let's Transform Your Business
+            </h2>
+            <div class="max-w-xl mx-auto bg-white p-8 md:p-12 rounded-3xl shadow-lg">
+                <form id="contact-form" action="https://formspree.io/f/xdklbgle" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" id="label-name" class="block text-sm font-medium text-slate-700">Name</label>
+                        <input type="text" id="name" name="name" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                    <div>
+                        <label for="email" id="label-email" class="block text-sm font-medium text-slate-700">Email Address</label>
+                        <input type="email" id="email" name="email" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                    <div>
+                        <label for="message" id="label-message" class="block text-sm font-medium text-slate-700">Your Message</label>
+                        <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                    </div>
+                    <button type="submit" id="submit-btn" class="w-full bg-indigo-600 text-white font-bold py-3 rounded-full shadow-lg hover:bg-indigo-700 transition-all transform hover:scale-105">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-800 text-white text-center py-6 px-4 rounded-t-3xl shadow-inner">
+        <p id="footer-text">© 2024 Bouka Net Retail Solutions. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                'page-title': 'Bouka Net Retail Solutions',
+                'nav-solutions': 'Solutions',
+                'nav-process': 'Process',
+                'nav-contact': 'Contact',
+                'hero-heading': 'Transform Your E-commerce Store with AR & AI',
+                'hero-subtitle': 'Our solutions help you reduce returns, increase conversions, and create an unforgettable shopping experience.',
+                'solutions-heading': 'The Problem & Our Solution',
+                'pain-points-heading': 'The Pain Points of Traditional E-commerce',
+                'pain-point-1': 'High return rates due to mismatched products.',
+                'pain-point-2': 'Lost sales from customer uncertainty.',
+                'pain-point-3': 'A generic, unengaging shopping experience.',
+                'advantage-heading': 'The Bouka Net Advantage',
+                'advantage-1': '<b class="font-bold">AR-Powered Product Visualization:</b> Customers see products in their own space.',
+                'advantage-2': '<b class="font-bold">AI Personalization:</b> Smart recommendations for higher conversions.',
+                'advantage-3': '<b class="font-bold">Seamless Integration:</b> We work with your existing platform.',
+                'before-heading': 'Before: Static Product Page',
+                'after-heading': 'After: Interactive 3D Model',
+                'how-it-works-heading': 'How It Works',
+                'step-1-heading': 'Consultation',
+                'step-1-text': 'We meet to understand your business goals and current e-commerce setup. No-pressure, just a chat about your needs.',
+                'step-2-heading': 'Development',
+                'step-2-text': 'Our team develops a custom AR/AI solution tailored to your product catalog and brand guidelines.',
+                'step-3-heading': 'Launch & Support',
+                'step-3-text': 'We integrate the solution into your store and provide ongoing support to ensure success.',
+                'contact-heading': 'Let\'s Transform Your Business',
+                'label-name': 'Name',
+                'label-email': 'Email Address',
+                'label-message': 'Your Message',
+                'submit-btn': 'Send Message',
+                'message-box': 'Thank you for your message! We will be in touch shortly.',
+                'input-name-placeholder': 'Enter your name',
+                'input-email-placeholder': 'Enter your email',
+                'input-message-placeholder': 'Your message here',
+                'footer-text': '© 2024 Bouka Net Retail Solutions. All Rights Reserved.',
+            },
+            ar: {
+                'page-title': 'حلول التجزئة من الجيل القادم',
+                'nav-solutions': 'الحلول',
+                'nav-process': 'العملية',
+                'nav-contact': 'اتصل بنا',
+                'hero-heading': 'حوّل متجرك الإلكتروني باستخدام الواقع المعزز والذكاء الاصطناعي',
+                'hero-subtitle': 'تساعدك حلولنا على تقليل المرتجعات وزيادة التحويلات وإنشاء تجربة تسوق لا تُنسى.',
+                'solutions-heading': 'المشكلة وحلولنا',
+                'pain-points-heading': 'نقاط الضعف في التجارة الإلكترونية التقليدية',
+                'pain-point-1': 'ارتفاع معدلات المرتجعات بسبب المنتجات غير المطابقة.',
+                'pain-point-2': 'خسارة المبيعات بسبب عدم يقين العملاء.',
+                'pain-point-3': 'تجربة تسوق عامة وغير جذابة.',
+                'advantage-heading': 'ميزة الجيل القادم',
+                'advantage-1': '<b class="font-bold">تصور المنتجات المدعوم بالواقع المعزز:</b> يرى العملاء المنتجات في مساحتهم الخاصة.',
+                'advantage-2': '<b class="font-bold">التخصيص بالذكاء الاصطناعي:</b> توصيات ذكية لزيادة التحويلات.',
+                'advantage-3': '<b class="font-bold">التكامل السلس:</b> نحن نعمل مع منصتك الحالية.',
+                'before-heading': 'قبل: صفحة المنتج التقليدية',
+                'after-heading': 'بعد: نموذج تفاعلي ثلاثي الأبعاد',
+                'how-it-works-heading': 'كيف تعمل',
+                'step-1-heading': 'التشاور',
+                'step-1-text': 'نلتقي لفهم أهداف عملك وإعداد التجارة الإلكترونية الحالي. لا يوجد ضغط، فقط محادثة حول احتياجاتك.',
+                'step-2-heading': 'التطوير',
+                'step-2-text': 'يقوم فريقنا بتطوير حل مخصص للواقع المعزز/الذكاء الاصطناعي يتناسب مع كتالوج منتجاتك وإرشادات علامتك التجارية.',
+                'step-3-heading': 'الإطلاق والدعم',
+                'step-3-text': 'نقوم بدمج الحل في متجرك ونقدم دعمًا مستمرًا لضمان النجاح.',
+                'contact-heading': 'لنحوّل عملك',
+                'label-name': 'الاسم',
+                'label-email': 'عنوان البريد الإلكتروني',
+                'label-message': 'رسالتك',
+                'submit-btn': 'أرسل الرسالة',
+                'message-box': 'شكرًا لرسالتك! سنتواصل معك قريبًا.',
+                'input-name-placeholder': 'أدخل اسمك',
+                'input-email-placeholder': 'أدخل بريدك الإلكتروني',
+                'input-message-placeholder': 'رسالتك هنا',
+                'footer-text': '© 2024 حلول التجزئة من الجيل القادم. جميع الحقوق محفوظة.',
+            }
+        };
+
+        function setLanguage(lang) {
+            const elements = translations[lang];
+            for (const id in elements) {
+                const element = document.getElementById(id);
+                if (element) {
+                    if (id.startsWith('input-')) {
+                        const inputId = id.replace('input-', '');
+                        document.getElementById(inputId).placeholder = elements[id];
+                    } else {
+                        element.innerHTML = elements[id];
+                    }
+                }
+            }
+            if (lang === 'ar') {
+                document.body.classList.add('rtl-mode');
+                document.documentElement.setAttribute('lang', 'ar');
+            } else {
+                document.body.classList.remove('rtl-mode');
+                document.documentElement.setAttribute('lang', 'en');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const langChooser = document.getElementById('language-chooser');
+            setLanguage(langChooser.value);
+            langChooser.addEventListener('change', (event) => {
+                setLanguage(event.target.value);
+            });
+        });
+    </script>
+</body>
+</html>
