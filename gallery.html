@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Model Viewer</title>
+
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-family: sans-serif;
+            text-align: center;
+        }
+        
+        h1 {
+            padding: 20px;
+            color: #333;
+        }
+        
+        model-viewer {
+            width: 80%;
+            height: 600px;
+            margin: auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .icon-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .icon-container img {
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            border-radius: 8px;
+            border: 2px solid transparent;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .icon-container img:hover {
+            transform: scale(1.1);
+            border-color: #007BFF;
+        }
+
+        .note {
+            margin-top: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>My 3D Model</h1>
+
+    <div class="icon-container">
+        <img src="./image1.jpg" alt="Icon for Project 1" width="80" height="80" onclick="changeModel('./object1.glb')">
+        <img src="./image2.jpg" alt="Icon for Project 2" width="80" height="80" onclick="changeModel('./object2.glb')">
+        <img src="./image3.jpg" alt="Icon for Project 3" width="80" height="80" onclick="changeModel('./object3.glb')">
+        <img src="./image4.jpg" alt="Icon for Project 4" width="80" height="80" onclick="changeModel('./object4.glb')">
+    </div>
+
+    <model-viewer id="modelViewer"
+        alt="A 3D model of an object"
+        camera-controls
+        auto-rotate
+        shadow-intensity="1">
+    </model-viewer>
+
+    <p class="note">
+        You can use your mouse or finger to rotate and zoom the model.
+    </p>
+
+    <script>
+        function changeModel(modelSrc) {
+            const modelViewer = document.getElementById('modelViewer');
+            modelViewer.setAttribute('src', modelSrc);
+        }
+    </script>
+
+</body>
+</html>
