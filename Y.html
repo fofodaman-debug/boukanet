@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Model Viewer</title>
+    
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-family: sans-serif;
+            text-align: center;
+        }
+        
+        h1 {
+            padding: 20px;
+            color: #333;
+        }
+        
+        /* The model-viewer element needs to have a size */
+        model-viewer {
+            width: 80%;
+            height: 600px;
+            margin: auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .note {
+            margin-top: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>My 3D Model</h1>
+
+    <model-viewer 
+        src="https://raw.githubusercontent.com/fofodaman-debug/boukanet/main/Y.glb"
+        alt="A 3D model of an object"
+        camera-controls 
+        auto-rotate 
+        shadow-intensity="1">
+    </model-viewer>
+
+    <p class="note">
+        You can use your mouse or finger to rotate and zoom the model.
+    </p>
+
+</body>
+</html>
