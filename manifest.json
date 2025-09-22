@@ -1,0 +1,9 @@
+{
+  "name": "Police Radio",
+  "short_name": "Police Radio",
+  "description": "A police radio text-to-speech app with siren sound.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#00ff00"
+}
