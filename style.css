@@ -1,51 +1,51 @@
 body {
-  background-color: #1a1a1a;
-  color: #00ff00;
-  font-family: "Courier New", Courier, monospace;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+    background-color: #1a1a1a;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
 .container {
-  background-color: #333;
-  padding: 20px;
-  border: 2px solid #00ff00;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-  text-align: center;
+    background-color: #333;
+    padding: 20px;
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    text-align: center;
 }
 
 h1 {
-  margin-top: 0;
-  color: #fff;
+    margin-top: 0;
+    color: #fff;
 }
 
 textarea {
-  width: 90%;
-  height: 100px;
-  background-color: #000;
-  color: #00ff00;
-  border: 1px solid #00ff00;
-  padding: 10px;
-  margin-bottom: 15px;
-  font-family: "Courier New", Courier, monospace;
-  resize: none;
+    width: 90%;
+    height: 100px;
+    background-color: #000;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    resize: none;
 }
 
 button {
-  background-color: #00ff00;
-  color: #000;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  font-family: "Courier New", Courier, monospace;
-  transition: background-color 0.3s;
+    background-color: #00ff00;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #00cc00;
+    background-color: #00cc00;
 }
