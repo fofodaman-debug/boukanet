@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Police Radio</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #333;
+            padding: 20px;
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #fff;
+        }
+        
+        select, textarea {
+            width: 90%;
+            background-color: #000;
+            color: #00ff00;
+            border: 1px solid #00ff00;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        button {
+            background-color: #00ff00;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            font-family: 'Courier New', Courier, monospace;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #00cc00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Police Radio Text-to-Speech</h1>
+        <p>Type your message below and press "Transmit" to hear it with a police siren.</p>
+        <textarea id="text-input" placeholder="ادخل النص هنا..."></textarea>
+        <select id="voice-select"></select>
+        <button id="speak-button">Transmit</button>
+    </div>
+    <audio id="police-siren" src="police-siren.mp3" preload="auto"></audio>
+    <script>
+        const textInput = document.getElementById('text-input');
+        const speakButton = document.getElementById('speak-button');
+        const voiceSelect = document.getElementById('voice-select');
+        const policeSiren = document.getElementById('police-siren');
+
+        function populateVoiceList() {
+            const voices = window.speechSynthesis.getVoices().filter(voice => voice.lang.startsWith('ar'));
+            voiceSelect.innerHTML = '';
+            
+            if (voices.length === 0) {
+                const option = document.createElement('option');
+                option.textContent = 'No Arabic voices found on this device.';
+                voiceSelect.appendChild(option);
+                speakButton.disabled = true;
+            } else {
+                speakButton.disabled = false;
+                voices.forEach(voice => {
+                    const option = document.createElement('option');
+                    option.textContent = `${voice.name} (${voice.lang})`;
+                    option.setAttribute('data-name', voice.name);
+                    option.setAttribute('data-lang', voice.lang);
+                    voiceSelect.appendChild(option);
+                });
+            }
+        }
+
+        populateVoiceList();
+
+        if (window.speechSynthesis.onvoiceschanged !== undefined) {
+            window.speechSynthesis.onvoiceschanged = populateVoiceList;
+        }
+
+        if ('speechSynthesis' in window) {
+            speakButton.addEventListener('click', () => {
+                const textToSpeak = textInput.value;
+                if (textToSpeak.trim() !== '') {
+                    window.speechSynthesis.cancel();
+                    
+                    const utterance = new SpeechSynthesisUtterance(textToSpeak);
+                    
+                    const selectedOption = voiceSelect.options[voiceSelect.selectedIndex];
+                    const selectedVoiceName = selectedOption.getAttribute('data-name');
+                    const selectedVoice = window.speechSynthesis.getVoices().find(voice => voice.name === selectedVoiceName);
+
+                    if (selectedVoice) {
+                        utterance.voice = selectedVoice;
+                        utterance.lang = selectedVoice.lang;
+                    }
+
+                    policeSiren.currentTime = 0;
+                    policeSiren.loop = true;
+                    policeSiren.play();
+
+                    utterance.onend = () => {
+                        policeSiren.pause();
+                        policeSiren.currentTime = 0;
+                    };
+
+                    window.speechSynthesis.speak(utterance);
+                }
+            });
+        } else {
+            alert('Your browser does not support the Web Speech API.');
+        }
+    </script>
+</body>
+</html>
