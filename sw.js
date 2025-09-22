@@ -1,10 +1,10 @@
 const CACHE_NAME = 'police-radio-cache-v1';
 const urlsToCache = [
-  '/boukanet/',
-  '/boukanet/index.html',
-  '/boukanet/style.css',
-  '/boukanet/script.js',
-  '/boukanet/manifest.json',
+  'https://fofodaman-debug.github.io/boukanet/',
+  'https://fofodaman-debug.github.io/boukanet/index.html',
+  'https://fofodaman-debug.github.io/boukanet/style.css',
+  'https://fofodaman-debug.github.io/boukanet/script.js',
+  'https://fofodaman-debug.github.io/boukanet/manifest.json',
   'https://fofodaman-debug.github.io/boukanet/police-siren.mp3',
 ];
 
