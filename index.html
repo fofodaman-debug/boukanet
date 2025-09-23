@@ -4,24 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Police Radio</title>
+    <meta name="theme-color" content="#1a1a1a">
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
 </head>
 <body>
     <div class="container">
-        <h1>Police Radio Text-to-Speech</h1>
-        <p>Type your message below and press "Transmit" to hear it with a police siren.</p>
-        <textarea id="text-input" placeholder="ادخل النص هنا..."></textarea>
-        <select id="language-select">
-            <option value="ar-SA">Arabic</option>
-            <option value="en-US">English</option>
-            <option value="es-ES">Spanish</option>
-            <option value="fr-FR">French</option>
-            <option value="de-DE">German</option>
-        </select>
-        <button id="speak-button">Transmit</button>
+        <h1>Police Radio</h1>
+        <textarea id="text-input" placeholder="Enter text to speak"></textarea>
+        <div class="controls">
+            <select id="language-select">
+                <option value="en-US">English (US)</option>
+                <option value="es-ES">Spanish (Spain)</option>
+                <option value="fr-FR">French (France)</option>
+                <option value="de-DE">German (Germany)</option>
+            </select>
+            <button id="speak-button">Speak</button>
+        </div>
+        <button id="install-button" hidden>Install App</button>
     </div>
-    <audio id="police-siren" src="https://fofodaman-debug.github.io/boukanet/police-siren.mp3" preload="auto"></audio>
+    <audio id="police-siren" src="police-siren.mp3"></audio>
     <script src="script.js"></script>
 </body>
 </html>
