@@ -5,7 +5,9 @@ const urlsToCache = [
   'style.css',
   'script.js',
   'manifest.json',
-  'police-siren.mp3'
+  'police-siren.mp3',
+  'badge-192.png',
+  'badge-512.png'
 ];
 
 self.addEventListener('install', event => {
