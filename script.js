@@ -12,14 +12,37 @@ utterance.onend = () => {
     policeSiren.currentTime = 0;
 };
 
-// Register the Service Worker for PWA functionality
+// PWA install button logic
+let deferredPrompt;
+const installButton = document.getElementById('install-button');
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    installButton.hidden = false;
+});
+
+installButton.addEventListener('click', () => {
+    installButton.hidden = true;
+    if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+                console.log('User accepted the install prompt');
+            } else {
+                console.log('User dismissed the install prompt');
+            }
+            deferredPrompt = null;
+        });
+    }
+});
+
+// Service Worker Registration
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/boukanet/sw.js')
       .then(registration => {
         console.log('Service Worker registered! Scope:', registration.scope);
-        
-        // This code forces the service worker to update immediately
         registration.onupdatefound = () => {
           const installingWorker = registration.installing;
           installingWorker.onstatechange = () => {
@@ -43,12 +66,10 @@ speakButton.addEventListener('click', () => {
         utterance.text = textToSpeak;
         utterance.lang = selectedLanguage;
 
-        // Play the siren first
         policeSiren.currentTime = 0;
         policeSiren.loop = true;
         policeSiren.play();
 
-        // Then speak the text
         synth.speak(utterance);
     }
 });
