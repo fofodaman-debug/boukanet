@@ -15,9 +15,19 @@ utterance.onend = () => {
 // Register the Service Worker for PWA functionality
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/boukanet/sw.js', { scope: '/boukanet/' })
+    navigator.serviceWorker.register('/boukanet/sw.js')
       .then(registration => {
         console.log('Service Worker registered! Scope:', registration.scope);
+        
+        // This code forces the service worker to update immediately
+        registration.onupdatefound = () => {
+          const installingWorker = registration.installing;
+          installingWorker.onstatechange = () => {
+            if (installingWorker.state === 'installed' && navigator.serviceWorker.controller) {
+              installingWorker.skipWaiting();
+            }
+          };
+        };
       })
       .catch(err => {
         console.log('Service Worker registration failed:', err);
