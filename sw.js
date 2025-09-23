@@ -1,11 +1,11 @@
 const CACHE_NAME = 'police-radio-cache-v1';
 const urlsToCache = [
-  '/boukanet/',
-  '/boukanet/index.html',
-  '/boukanet/style.css',
-  '/boukanet/script.js',
-  '/boukanet/manifest.json',
-  'https://fofodaman-debug.github.io/boukanet/police-siren.mp3',
+  './',
+  'index.html',
+  'style.css',
+  'script.js',
+  'manifest.json',
+  'police-siren.mp3'
 ];
 
 self.addEventListener('install', event => {
