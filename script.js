@@ -40,7 +40,7 @@ installButton.addEventListener('click', () => {
 // Service Worker Registration
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/boukanet/sw.js')
+    navigator.serviceWorker.register('sw.js')
       .then(registration => {
         console.log('Service Worker registered! Scope:', registration.scope);
         registration.onupdatefound = () => {
